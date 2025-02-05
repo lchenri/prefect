@@ -146,10 +146,13 @@ def stock_workflow():
 
 if __name__ == "__main__":
     flow.from_source(
-        source="https://github.com/prefecthq/demo.git",
-        entrypoint="flow.py:my_flow",
+        source="https://github.com/lchenri/prefect",
+        entrypoint="projeto.py:stock_workflow",
     ).deploy(
         name="test-managed-flow",
         work_pool_name="my-managed-pool",
+        job_variables={"pip_packages":  [
+            "pandas", "prefect-aws", "aiosqlite", "alembic", "annotated-types", "anyio", "apprise", "argon2-cffi", "argon2-cffi-bindings", "arrow", "asgi-lifespan", "asttokens", "async-lru", "async-timeout", "asyncpg", "attrs", "babel", "beautifulsoup4", "bleach", "boto3", "botocore", "cachetools", "certifi", "cffi", "charset-normalizer", "click", "cloudpickle", "colorama", "comm", "coolname", "croniter", "cryptography", "dateparser", "debugpy", "decorator", "defusedxml", "Deprecated", "docker", "exceptiongroup", "executing", "fastapi", "fastjsonschema", "fqdn", "frozendict", "fsspec", "graphviz", "greenlet", "griffe", "h11", "h2", "hpack", "html5lib", "httpcore", "httpx", "humanize", "hyperframe", "idna", "importlib_metadata", "ipykernel", "ipython", "isoduration", "jedi", "Jinja2", "jinja2-humanize-extension", "jmespath", "json5", "jsonpatch", "jsonpointer", "jsonschema", "jsonschema-specifications", "jupyter-events", "jupyter-lsp", "jupyter_client", "jupyter_core", "jupyter_server", "jupyter_server_terminals", "jupyterlab", "jupyterlab_pygments", "jupyterlab_server", "lxml", "Mako", "Markdown", "markdown-it-py", "MarkupSafe", "matplotlib-inline", "mdurl", "mistune", "multitasking", "mypy-boto3-s3", "mypy-boto3-secretsmanager", "nbclient", "nbconvert", "nbformat", "nest-asyncio", "notebook", "notebook_shim", "numpy", "oauthlib", "opentelemetry-api", "orjson", "overrides", "packaging", "pandocfilters", "parso", "pathspec", "peewee", "pendulum", "platformdirs", "prefect", "prometheus_client", "prompt_toolkit", "psutil", "pure_eval", "pycparser", "pydantic", "pydantic-extra-types", "pydantic-settings", "pydantic_core", "Pygments", "pyparsing", "python-dateutil", "python-dotenv", "python-json-logger", "python-slugify", "python-socks", "pytz", "pywin32", "pywinpty", "PyYAML", "pyzmq", "readchar", "referencing", "regex", "requests", "requests-oauthlib", "rfc3339-validator", "rfc3986-validator", "rich", "rpds-py", "ruamel.yaml", "ruamel.yaml.clib", "s3transfer", "Send2Trash", "shellingham", "six", "sniffio", "soupsieve", "SQLAlchemy", "stack-data", "starlette", "tenacity", "terminado", "text-unidecode", "time-machine", "tinycss2", "toml", "tomli", "tornado", "traitlets", "typer", "typing_extensions", "tzdata", "tzlocal", "ujson", "uri-template", "urllib3", "uvicorn", "wcwidth", "webcolors", "webencodings", "websocket-client", "websockets", "wrapt", "yfinance", "zipp"
+        ]}
     )
 
