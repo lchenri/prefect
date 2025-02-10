@@ -53,10 +53,6 @@ O workflow está configurado para rodar automaticamente via Prefect Cloud ou um 
 - **Erro no download de ações**: Algumas requisições falhavam devido a problemas na API. A solução foi adicionar tentativas de reexecução com `retries` e `retry_delay_seconds`.
 - **Falhas no upload para o S3**: Erros relacionados a credenciais foram resolvidos garantindo a correta configuração das credenciais do AWS no Prefect.
 
-## Contribuição
-
-Sinta-se à vontade para abrir issues e pull requests com melhorias ou correções.
-
 ## Licença
 
 Este projeto está sob a licença MIT.
